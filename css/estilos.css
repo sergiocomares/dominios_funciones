@@ -262,6 +262,18 @@ body {
     font-weight: 700;
 }
 
+/* Estilos para MathJax */
+.formula-grande mjx-container {
+    font-size: 1.5em !important;
+    display: flex;
+    justify-content: center;
+}
+
+.formula mjx-container {
+    font-size: 1.2em !important;
+    overflow-x: auto;
+}
+
 /* Análisis de pasos */
 .analisis-pasos {
     margin: 30px 0;

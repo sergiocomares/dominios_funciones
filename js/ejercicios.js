@@ -11,14 +11,14 @@ const ejercicios = [
     {
         id: 1,
         tipo: 'denominador',
-        funciones: '1 / (x - 2)',
+        funciones: 'f(x) = \\frac{1}{x - 2}',
         titulo: 'Función con Denominador',
         explicacion: 'Función racional simple',
         pasos: [
             'Identificamos que es una fracción.',
-            'El denominador es: x - 2',
+            'El denominador es: $x - 2$',
             'El denominador no puede ser 0.',
-            'Resolvemos: x - 2 ≠ 0  →  x ≠ 2',
+            'Resolvemos: $x - 2 \\neq 0$ → $x \\neq 2$',
             'Por lo tanto, el dominio excluye el valor 2.'
         ],
         dominioCorrecto: ['(-∞, 2) ∪ (2, +∞)', 'ℝ - {2}', 'Dominio: ℝ - {2}'],
@@ -36,14 +36,14 @@ const ejercicios = [
     {
         id: 2,
         tipo: 'raiz_par',
-        funciones: '√(x - 3)',
+        funciones: 'f(x) = \\sqrt{x - 3}',
         titulo: 'Raíz Cuadrada',
         explicacion: 'La raíz cuadrada requiere argumento no negativo',
         pasos: [
             'Identificamos que es una raíz cuadrada (raíz par).',
-            'El argumento (interior) es: x - 3',
-            'Las raíces pares requieren: argumento ≥ 0',
-            'Resolvemos: x - 3 ≥ 0  →  x ≥ 3',
+            'El argumento (interior) es: $x - 3$',
+            'Las raíces pares requieren: argumento $\\geq 0$',
+            'Resolvemos: $x - 3 \\geq 0$ → $x \\geq 3$',
             'El dominio incluye todos los valores desde 3 en adelante.'
         ],
         dominioCorrecto: ['[3, +∞)', 'Dominio: [3, +∞)', 'x ≥ 3'],
@@ -62,14 +62,14 @@ const ejercicios = [
     {
         id: 3,
         tipo: 'logaritmo',
-        funciones: 'ln(x - 1)',
+        funciones: 'f(x) = \\ln(x - 1)',
         titulo: 'Logaritmo Natural',
         explicacion: 'El logaritmo solo existe para valores positivos',
         pasos: [
             'Identificamos que es un logaritmo.',
-            'El argumento es: x - 1',
-            'Los logaritmos requieren: argumento > 0 (estrictamente positivo)',
-            'Resolvemos: x - 1 > 0  →  x > 1',
+            'El argumento es: $x - 1$',
+            'Los logaritmos requieren: argumento $> 0$ (estrictamente positivo)',
+            'Resolvemos: $x - 1 > 0$ → $x > 1$',
             'El dominio incluye todos los valores mayores que 1 (sin incluir 1).'
         ],
         dominioCorrecto: ['(1, +∞)', 'Dominio: (1, +∞)', 'x > 1'],
@@ -88,13 +88,13 @@ const ejercicios = [
     {
         id: 4,
         tipo: 'denominador',
-        funciones: '5 / (x + 1)',
+        funciones: 'f(x) = \\frac{5}{x + 1}',
         titulo: 'Función Racional - Desplazamiento',
         explicacion: 'Similar al primero pero con desplazamiento',
         pasos: [
-            'Es una fracción con denominador: x + 1',
+            'Es una fracción con denominador: $x + 1$',
             'El denominador no puede ser 0.',
-            'Resolvemos: x + 1 ≠ 0  →  x ≠ -1',
+            'Resolvemos: $x + 1 \\neq 0$ → $x \\neq -1$',
             'El dominio excluye el valor -1.'
         ],
         dominioCorrecto: ['(-∞, -1) ∪ (-1, +∞)', 'ℝ - {-1}'],
@@ -112,15 +112,15 @@ const ejercicios = [
     {
         id: 5,
         tipo: 'raiz_par',
-        funciones: '√(2x - 4)',
+        funciones: 'f(x) = \\sqrt{2x - 4}',
         titulo: 'Raíz Cuadrada - Segunda Forma',
         explicacion: 'Raíz con coeficiente en la variable',
         pasos: [
-            'Es una raíz cuadrada con argumento: 2x - 4',
-            'Las raíces pares requieren: argumento ≥ 0',
-            'Resolvemos: 2x - 4 ≥ 0',
-            'Sumamos 4: 2x ≥ 4',
-            'Dividimos entre 2: x ≥ 2',
+            'Es una raíz cuadrada con argumento: $2x - 4$',
+            'Las raíces pares requieren: argumento $\\geq 0$',
+            'Resolvemos: $2x - 4 \\geq 0$',
+            'Sumamos 4: $2x \\geq 4$',
+            'Dividimos entre 2: $x \\geq 2$',
             'El dominio es desde 2 en adelante.'
         ],
         dominioCorrecto: ['[2, +∞)', 'x ≥ 2', 'Dominio: [2, +∞)'],
@@ -139,14 +139,14 @@ const ejercicios = [
     {
         id: 6,
         tipo: 'logaritmo',
-        funciones: 'log(x + 5)',
+        funciones: 'f(x) = \\log(x + 5)',
         titulo: 'Logaritmo en Base 10',
         explicacion: 'Desplazamiento horizontal con logaritmo',
         pasos: [
-            'Es un logaritmo con argumento: x + 5',
-            'Los logaritmos requieren: argumento > 0',
-            'Resolvemos: x + 5 > 0',
-            'Restamos 5: x > -5',
+            'Es un logaritmo con argumento: $x + 5$',
+            'Los logaritmos requieren: argumento $> 0$',
+            'Resolvemos: $x + 5 > 0$',
+            'Restamos 5: $x > -5$',
             'El dominio es desde -5 (sin incluir) en adelante.'
         ],
         dominioCorrecto: ['(-5, +∞)', 'x > -5', 'Dominio: (-5, +∞)'],
@@ -165,18 +165,18 @@ const ejercicios = [
     {
         id: 7,
         tipo: 'combinada',
-        funciones: '1 / √(x - 1)',
+        funciones: 'f(x) = \\frac{1}{\\sqrt{x - 1}}',
         titulo: 'Fracción con Raíz en Denominador',
         explicacion: 'Combinación de restricciones: raíz y denominador',
         pasos: [
-            'Tenemos: 1 / √(x - 1)',
-            'Restricción 1: La raíz (raíz par) requiere: x - 1 ≥ 0  →  x ≥ 1',
-            'Restricción 2: El denominador no puede ser 0: √(x - 1) ≠ 0',
-            'Esto significa: x - 1 ≠ 0  →  x ≠ 1',
-            'Combinando: x ≥ 1 Y x ≠ 1  →  x > 1'
+            'Tenemos: $f(x) = \\frac{1}{\\sqrt{x - 1}}$',
+            'Restricción 1: La raíz (raíz par) requiere: $x - 1 \\geq 0$ → $x \\geq 1$',
+            'Restricción 2: El denominador no puede ser 0: $\\sqrt{x - 1} \\neq 0$',
+            'Esto significa: $x - 1 \\neq 0$ → $x \\neq 1$',
+            'Combinando: $x \\geq 1$ Y $x \\neq 1$ → $x > 1$'
         ],
         dominioCorrecto: ['(1, +∞)', 'x > 1', 'Dominio: (1, +∞)'],
-        pista: 'Cuidado: necesitas x ≥ 1 (raíz) pero TAMBIÉN x ≠ 1 (denominador).¿Qué resultado final?',
+        pista: 'Cuidado: necesitas x ≥ 1 (raíz) pero TAMBIÉN x ≠ 1 (denominador). ¿Qué resultado final?',
         valoresEspeciales: [
             { x: 0, valido: false },
             { x: 1, valido: false },
@@ -191,15 +191,15 @@ const ejercicios = [
     {
         id: 8,
         tipo: 'combinada',
-        funciones: '√(x² - 4)',
+        funciones: 'f(x) = \\sqrt{x^2 - 4}',
         titulo: 'Raíz con Expresión Cuadrática',
         explicacion: 'Argumento de la raíz es un polinomio de grado 2',
         pasos: [
-            'Tenemos: √(x² - 4)',
-            'Las raíces pares requieren: x² - 4 ≥ 0',
-            'Factorizamos: (x - 2)(x + 2) ≥ 0',
-            'Los ceros son x = 2 y x = -2',
-            'Analizamos signos: es positivo cuando x ≤ -2 o x ≥ 2'
+            'Tenemos: $f(x) = \\sqrt{x^2 - 4}$',
+            'Las raíces pares requieren: $x^2 - 4 \\geq 0$',
+            'Factorizamos: $(x - 2)(x + 2) \\geq 0$',
+            'Los ceros son $x = 2$ y $x = -2$',
+            'Analizamos signos: es positivo cuando $x \\leq -2$ o $x \\geq 2$'
         ],
         dominioCorrecto: ['(-∞, -2] ∪ [2, +∞)', 'x ≤ -2 o x ≥ 2'],
         pista: 'Resuelve x² - 4 ≥ 0. Factoriza y busca dónde el producto es no negativo.',

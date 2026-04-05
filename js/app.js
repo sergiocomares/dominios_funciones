@@ -108,7 +108,7 @@ function cargarEjercicio(indice) {
     
     // Actualizar UI del ejercicio
     document.getElementById('tituloEjercicio').textContent = ejercicio.titulo;
-    document.getElementById('funcionActual').textContent = ejercicio.funciones;
+    document.getElementById('funcionActual').innerHTML = '$$' + ejercicio.funciones + '$$';
     
     // Cargar pasos del análisis
     cargarPasosAnalisis(ejercicio.pasos);
@@ -118,6 +118,11 @@ function cargarEjercicio(indice) {
     
     // Actualizar progreso
     actualizarProgreso();
+    
+    // Re-renderizar matemáticas con MathJax
+    if (typeof MathJax !== 'undefined') {
+        MathJax.typesetPromise().catch(err => console.log(err));
+    }
     
     // Enfocar input
     setTimeout(() => {
@@ -139,6 +144,11 @@ function cargarPasosAnalisis(pasos) {
         elPaso.innerHTML = `<strong>Paso ${index + 1}:</strong> ${paso}`;
         contenedor.appendChild(elPaso);
     });
+    
+    // Re-renderizar matemáticas en los pasos
+    if (typeof MathJax !== 'undefined') {
+        MathJax.typesetPromise([contenedor]).catch(err => console.log(err));
+    }
 }
 
 /**
@@ -201,11 +211,18 @@ function mostrarFeedbackCorrecto(ejercicio) {
     let html = `
         <p><strong>✓ ¡Correcto!</strong></p>
         <p>Ganaste <strong>${puntos} puntos</strong>.</p>
-        <p>El dominio de f(x) = ${ejercicio.funciones} es: <strong>${ejercicio.dominioCorrecto[0]}</strong></p>
+        <p>El dominio de $$${ejercicio.funciones}$$ es: <strong>${ejercicio.dominioCorrecto[0]}</strong></p>
     `;
     
     mostrarFeedback(html, 'correcto');
     actualizarPuntuacion();
+    
+    // Re-renderizar MathJax en el feedback
+    if (typeof MathJax !== 'undefined') {
+        setTimeout(() => {
+            MathJax.typesetPromise([feedback]).catch(err => console.log(err));
+        }, 100);
+    }
     
     // Mostrar botón siguiente
     btnSiguiente.style.display = 'inline-block';

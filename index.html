@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dominio de Funciones - 4º ESO</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <!-- MathJax para renderizar LaTeX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <div class="contenedor-principal">
@@ -44,22 +47,22 @@
                         <h3>⚠️ Restricción 1: Denominadores</h3>
                         <p>En fracciones, el denominador <strong>nunca puede ser cero</strong>.</p>
                         <div class="ejemplo-visual">
-                            <p class="formula">f(x) = 1 / (x - 2)</p>
-                            <p class="explicacion">Si x = 2 → denominador = 0 ❌</p>
-                            <p class="explicacion">Entonces: x ≠ 2</p>
-                            <p class="dominio">Dominio: ℝ - {2} o (-∞, 2) ∪ (2, +∞)</p>
+                            <p class="formula">$$f(x) = \frac{1}{x - 2}$$</p>
+                            <p class="explicacion">Si $x = 2$ → denominador = 0 ❌</p>
+                            <p class="explicacion">Entonces: $x \neq 2$</p>
+                            <p class="dominio">Dominio: $\mathbb{R} - \{2\}$ o $(-\infty, 2) \cup (2, +\infty)$</p>
                         </div>
                     </div>
 
                     <!-- RESTRICCIÓN 2: RAÍCES PARES -->
                     <div class="card-restriccion">
                         <h3>√ Restricción 2: Raíces Pares</h3>
-                        <p>Las raíces pares (√, ⁴√, ...) solo existen para valores <strong>≥ 0</strong>.</p>
+                        <p>Las raíces pares ($\sqrt{\phantom{x}}$, $\sqrt[4]{\phantom{x}}$, ...) solo existen para valores <strong>≥ 0</strong>.</p>
                         <div class="ejemplo-visual">
-                            <p class="formula">f(x) = √(x - 3)</p>
-                            <p class="explicacion">Necesitamos: x - 3 ≥ 0</p>
-                            <p class="explicacion">Entonces: x ≥ 3</p>
-                            <p class="dominio">Dominio: [3, +∞)</p>
+                            <p class="formula">$$f(x) = \sqrt{x - 3}$$</p>
+                            <p class="explicacion">Necesitamos: $x - 3 \geq 0$</p>
+                            <p class="explicacion">Entonces: $x \geq 3$</p>
+                            <p class="dominio">Dominio: $[3, +\infty)$</p>
                         </div>
                     </div>
 
@@ -68,10 +71,10 @@
                         <h3>ln Restricción 3: Logaritmos</h3>
                         <p>El logaritmo solo existe para valores <strong>> 0</strong> (estrictamente positivos).</p>
                         <div class="ejemplo-visual">
-                            <p class="formula">f(x) = ln(x - 1)</p>
-                            <p class="explicacion">Necesitamos: x - 1 > 0</p>
-                            <p class="explicacion">Entonces: x > 1</p>
-                            <p class="dominio">Dominio: (1, +∞)</p>
+                            <p class="formula">$$f(x) = \ln(x - 1)$$</p>
+                            <p class="explicacion">Necesitamos: $x - 1 > 0$</p>
+                            <p class="explicacion">Entonces: $x > 1$</p>
+                            <p class="dominio">Dominio: $(1, +\infty)$</p>
                         </div>
                     </div>
                 </div>
