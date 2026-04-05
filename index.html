@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominio de Funciones - 4º ESO</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <!-- ENCABEZADO -->
+        <header class="encabezado">
+            <h1>📊 Estudio del Dominio de Funciones</h1>
+            <p class="subtitulo">4º ESO - Actividad Interactiva</p>
+        </header>
+
+        <!-- PUNTUACIÓN Y PROGRESO -->
+        <div class="barra-superior">
+            <div class="puntuacion">
+                <span class="etiqueta-puntos">Puntos:</span>
+                <span class="numero-puntos" id="puntos">0</span>
+                <span class="etiqueta-puntos">/ 100</span>
+            </div>
+            <div class="progreso">
+                <span class="num-ejercicio" id="numEjercicio">Ejercicio 1</span>
+                <div class="barra-progreso">
+                    <div class="barra-relleno" id="barraRelleno" style="width: 10%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE INTRODUCCIÓN -->
+        <section class="seccion introduccion" id="seccionIntroduccion">
+            <div class="contenedor-seccion">
+                <h2>¿Qué es el Dominio de una Función?</h2>
+                <p class="texto-intro">
+                    El <strong>dominio de una función</strong> es el conjunto de todos los valores de <em>x</em> 
+                    para los que la función está definida y tiene valores reales.
+                </p>
+
+                <div class="cards-restricciones">
+                    <!-- RESTRICCIÓN 1: DENOMINADORES -->
+                    <div class="card-restriccion">
+                        <h3>⚠️ Restricción 1: Denominadores</h3>
+                        <p>En fracciones, el denominador <strong>nunca puede ser cero</strong>.</p>
+                        <div class="ejemplo-visual">
+                            <p class="formula">f(x) = 1 / (x - 2)</p>
+                            <p class="explicacion">Si x = 2 → denominador = 0 ❌</p>
+                            <p class="explicacion">Entonces: x ≠ 2</p>
+                            <p class="dominio">Dominio: ℝ - {2} o (-∞, 2) ∪ (2, +∞)</p>
+                        </div>
+                    </div>
+
+                    <!-- RESTRICCIÓN 2: RAÍCES PARES -->
+                    <div class="card-restriccion">
+                        <h3>√ Restricción 2: Raíces Pares</h3>
+                        <p>Las raíces pares (√, ⁴√, ...) solo existen para valores <strong>≥ 0</strong>.</p>
+                        <div class="ejemplo-visual">
+                            <p class="formula">f(x) = √(x - 3)</p>
+                            <p class="explicacion">Necesitamos: x - 3 ≥ 0</p>
+                            <p class="explicacion">Entonces: x ≥ 3</p>
+                            <p class="dominio">Dominio: [3, +∞)</p>
+                        </div>
+                    </div>
+
+                    <!-- RESTRICCIÓN 3: LOGARITMOS -->
+                    <div class="card-restriccion">
+                        <h3>ln Restricción 3: Logaritmos</h3>
+                        <p>El logaritmo solo existe para valores <strong>> 0</strong> (estrictamente positivos).</p>
+                        <div class="ejemplo-visual">
+                            <p class="formula">f(x) = ln(x - 1)</p>
+                            <p class="explicacion">Necesitamos: x - 1 > 0</p>
+                            <p class="explicacion">Entonces: x > 1</p>
+                            <p class="dominio">Dominio: (1, +∞)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="boton-principal" id="btnComenzar">Comenzar Ejercicios →</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE EJERCICIOS -->
+        <section class="seccion ejercicios" id="seccionEjercicios" style="display: none;">
+            <div class="contenedor-seccion">
+                <!-- EJERCICIO ACTUAL -->
+                <div class="ejercicio-actual">
+                    <h2 id="tituloEjercicio">Encuentra el Dominio</h2>
+                    
+                    <!-- FUNCIÓN -->
+                    <div class="display-funcion">
+                        <p>Dada la función:</p>
+                        <div class="formula-grande" id="funcionActual">
+                            f(x) = 1 / (x - 2)
+                        </div>
+                    </div>
+
+                    <!-- ANÁLISIS PASO A PASO -->
+                    <div class="analisis-pasos">
+                        <h3>Análisis Paso a Paso</h3>
+                        <div class="pasos-contenedor" id="pasosAnalisis">
+                            <!-- Se rellena dinámicamente con JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- VISUALIZACIÓN EN RECTA NUMÉRICA -->
+                    <div class="visualizacion-recta">
+                        <h3>Recta Numérica</h3>
+                        <div class="recta-numerica" id="rectaNumerica">
+                            <svg width="100%" height="100" viewBox="0 0 500 100" id="svgRecta">
+                                <!-- Se genera dinámicamente -->
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- ÁREA DE RESPUESTA -->
+                    <div class="area-respuesta">
+                        <label for="inputDominio">Tu respuesta:</label>
+                        <input 
+                            type="text" 
+                            id="inputDominio" 
+                            placeholder="Ej: (-∞, 2) ∪ (2, +∞) o ℝ - {2}"
+                            class="input-dominio"
+                        >
+                        <div class="formato-ayuda">
+                            💡 Formatos válidos: (-∞, 2) ∪ (2, +∞) | ℝ - {2} | [3, +∞) | (1, +∞)
+                        </div>
+                    </div>
+
+                    <!-- BOTONES DE ACCIÓN -->
+                    <div class="botones-ejercicio">
+                        <button class="boton-comprobar" id="btnComprobar">Comprobar Respuesta</button>
+                        <button class="boton-pista" id="btnPista">Mostrar Pista</button>
+                    </div>
+
+                    <!-- MENSAJE DE FEEDBACK -->
+                    <div class="feedback" id="feedback" style="display: none;">
+                        <div class="feedback-contenido" id="feedbackContenido"></div>
+                    </div>
+                </div>
+
+                <!-- BOTONES DE NAVEGACIÓN -->
+                <div class="botones-navegacion">
+                    <button class="boton-secundario" id="btnAtras">← Volver a Introducción</button>
+                    <button class="boton-siguiente" id="btnSiguiente" style="display: none;">Siguiente Ejercicio →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE FINALIZACIÓN -->
+        <section class="seccion finalizacion" id="seccionFinalizacion" style="display: none;">
+            <div class="contenedor-seccion">
+                <div class="resultado-final">
+                    <h2>¡Actividad Completada! 🎉</h2>
+                    <div class="resultado-puntos">
+                        <p class="puntuacion-final" id="puntuacionFinal">Puntuación Final: 0/100</p>
+                    </div>
+                    <div class="mensaje-resultado" id="mensajeResultado"></div>
+                    <div class="botones-final">
+                        <button class="boton-principal" id="btnReiniciar">Reiniciar Actividad</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/ejercicios.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
